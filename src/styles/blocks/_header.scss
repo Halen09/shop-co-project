@@ -1,0 +1,157 @@
+@use "../helpers" as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  &__promo {
+    background-color: var(--color-dark);
+    padding-block: rem(9);
+
+    &-container {
+      display: grid;
+      grid-template-columns: auto rem(20);
+      align-items: center;
+    }
+
+    &-link {
+      position: relative;
+      font-weight: 500;
+      color: var(--color-light);
+      font-size: rem(14);
+
+      @include mobile {
+        font-size: rem(12);
+      }
+
+      &::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: rem(1);
+        background-color: var(--color-light);
+        bottom: 0;
+      }
+
+      @include hover {
+        &:before {
+          background-color: var(--color-dark-1);
+          transition-duration: var(--transition-duration);
+        }
+      }
+    }
+
+    &-description {
+      justify-self: center;
+      font-weight: 400;
+      font-size: rem(14);
+      color: var(--color-light);
+
+      @include mobile {
+        font-size: rem(12);
+      }
+    }
+
+    &-button {
+      @include square(rem(20));
+      @include flex-center;
+
+      justify-self: end;
+      padding: 0;
+      background-color: transparent;
+      border: none;
+      color: var(--color-light);
+      transition-duration: var(--transition-duration);
+
+      @include hover {
+        & {
+          svg * {
+            fill: var(--color-dark-1);
+          }
+        }
+      }
+
+      svg * {
+        transition-duration: var(--transition-duration);
+        fill: currentColor;
+      }
+    }
+  }
+
+  &__body {
+    padding-block: fluid(24, 20);
+    background-color: var(--color-light);
+
+    &-inner {
+      display: grid;
+      grid-template-columns: auto auto 1fr auto;
+      justify-content: space-between;
+      column-gap: fluid(40, 16);
+      align-items: center;
+
+      @include mobile {
+        grid-template-columns: auto auto 1fr auto;
+        justify-content: start;
+      }
+    }
+  }
+
+  &__overlay {
+    @include mobile {
+      &:not(.is-active) {
+        @include hide;
+        translate: 100%;
+      }
+
+      position: fixed;
+      background-color: var(--color-light);
+      inset: 0;
+      transition-duration: var(--transition-duration);
+
+      @include flex-center;
+    }
+  }
+
+  &__menu-list {
+    display: flex;
+    justify-content: start;
+    column-gap: fluid(40, 12);
+
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      row-gap: rem(10);
+    }
+  }
+
+  &__menu-item {
+    font-size: rem(16);
+    font-weight: 400;
+    color: var(--color-dark);
+
+    @include mobile {
+      font-size: rem(20);
+    }
+  }
+
+  &__actions {
+    @include mobile {
+      justify-self: right;
+    }
+
+    &-list {
+      display: flex;
+      column-gap: rem(14);
+
+      @include mobile {
+        column-gap: rem(12);
+      }
+    }
+
+    &-item {
+      @include flex-center;
+    }
+  }
+}

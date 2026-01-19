@@ -1,0 +1,26 @@
+@use "./helpers" as *;
+
+:root {
+  --color-dark: #000;
+  --color-dark-1: #bdbdbd;
+  --color-dark-2: rgba(0, 0, 0, 0.4);
+  --color-dark-3: rgba(0, 0, 0, 0.6);
+  --color-dark-4: #f0f0f0;
+
+  --color-light: #fff;
+  --color-light-1: #f2f0f1;
+
+  --color-red: #f33;
+  --color-pink: rgba(255, 51, 51, 0.1);
+
+  --border-gray: rem(1) solid rgba(0, 0, 0, 0.1);
+  --border-dark: rem(10) solid var(--color-dark);
+
+  --font-family-base: "Satoshi", sans-serif;
+  --font-family-accent: "Integral CF", sans-serif;
+
+  --transition-duration: 0.2s;
+
+  --container-width: #{rem(1240)};
+  --container-padding-x: #{rem(16)};
+}

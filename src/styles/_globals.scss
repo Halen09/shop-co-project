@@ -1,0 +1,89 @@
+@use "helpers" as *;
+
+html {
+  &.is-lock {
+    overflow: hidden;
+  }
+}
+
+body {
+  font-size: rem(16);
+  font-weight: 400;
+  color: var(--color-dark);
+
+  @include mobile-s {
+    font-size: rem(14);
+  }
+
+  font-family: var(--font-family-base);
+}
+
+h1,
+.h1,
+h2,
+.h2 {
+  font-family: var(--font-family-accent);
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+h1,
+.h1 {
+  @include fluid-text(64, 36);
+
+  line-height: 100%;
+}
+
+h2,
+.h2 {
+  @include fluid-text(48, 32);
+}
+
+h3,
+.h3 {
+  @include fluid-text(20, 16);
+
+  font-weight: 700;
+  font-family: var(--font-family-base);
+  color: var(--color-dark);
+}
+
+a,
+button,
+label,
+input,
+textarea,
+select,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+a {
+  &[class] {
+    text-decoration: none;
+  }
+
+  @include hover {
+    color: var(--color-dark-1);
+  }
+}
+
+a,
+button {
+  &[aria-label] {
+    position: relative;
+
+    &::before {
+      @include abs-center;
+      @include square(rem(44));
+
+      content: '';
+    }
+  }
+}
+
+:focus-visible {
+  outline: rem(2) dashed var(--color-dark);
+  outline-offset: rem(4);
+  transition-duration: 0s !important;
+}
