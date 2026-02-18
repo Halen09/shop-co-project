@@ -1,0 +1,152 @@
+.section {
+  padding-top: fluid(72, 50);
+  padding-bottom: fluid(64, 40);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: var(--border-gray);
+  row-gap: fluid(55, 32);
+
+  @include mobile {
+    display: grid;
+    grid-template-columns: auto !important;
+  }
+}
+
+.title {
+  @include mobile {
+    justify-self: center !important;
+  }
+}
+
+.button {
+  width: rem(218);
+
+  @include mobile {
+    width: calc(100vw - var(--container-padding-x) * 2);
+  }
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: fluid(36, 24);
+
+  @include mobile {
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: start;
+  }
+}
+
+.list {
+  --container-max-width: #{rem(735)};
+
+  display: flex;
+  column-gap: fluid(20, 16);
+
+  @include mobile {
+    max-width: calc(100% + var(--container-padding-x));
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    justify-self: start;
+  }
+}
+
+.item {
+  list-style: none;
+
+  @include mobile {
+    scroll-snap-align: start;
+  }
+}
+
+.card {
+  width: auto;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: start;
+
+  row-gap: fluid(16, 10);
+}
+
+.link {
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  row-gap: rem(8);
+
+  @include mobile {
+    row-gap: rem(4);
+  }
+}
+
+.cardTitle {
+  margin: 0;
+}
+
+.price {
+  font-weight: 700;
+
+  @include fluid-text(24, 20);
+}
+
+.startingPrice {
+  font-weight: 700;
+  color: var(--color-dark-2);
+  position: relative;
+
+  @include fluid-text(24, 20);
+
+  &::before {
+    @include abs-y;
+
+    position: absolute;
+    content: "";
+    left: 0;
+    width: 100%;
+    height: rem(1);
+    background-color: var(--color-dark-2);
+  }
+}
+
+.discount {
+  border-radius: rem(62);
+  padding: rem(6) rem(14);
+  background-color: var(--color-pink);
+  color: var(--color-red);
+  font-weight: 500;
+  font-size: rem(12);
+
+  @include flex-center;
+
+  @include mobile {
+    font-size: rem(10);
+    padding: rem(3) rem(8);
+  }
+}
+
+.priceContainer {
+  display: flex;
+  column-gap: fluid(10, 5);
+}
+
+.image {
+  flex-shrink: 0;
+  min-width: fluid(295, 198);
+  object-fit: cover;
+  border-radius: rem(20);
+  transition-duration: var(--transition-duration);
+
+  @include mobile {
+    border-radius: rem(13);
+  }
+
+  @include hover {
+    translate: 0 rem(-5);
+  }
+}

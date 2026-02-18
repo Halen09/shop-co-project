@@ -30,13 +30,17 @@
     width: 100%;
     border-radius: rem(62);
     padding-block: rem(12);
-    padding-left: calc(var(--padding-x) + var(--icon-width) + var(--input-gap-x));
+    padding-left: calc(
+      var(--padding-x) + var(--icon-width) + var(--input-gap-x)
+    );
     border: none;
     background-color: var(--color-dark-4);
 
     &[type="search"] {
       &:placeholder-shown {
-        padding-left: calc(var(--padding-x) + var(--icon-width) + var(--input-gap-x));
+        padding-left: calc(
+          var(--padding-x) + var(--icon-width) + var(--input-gap-x)
+        );
         background-image: url("@/assets/icons/search_gray.svg");
         background-position: var(--padding-x) 50%;
         background-size: var(--icon-width);
@@ -47,7 +51,5 @@
         }
       }
     }
-
   }
 }
-

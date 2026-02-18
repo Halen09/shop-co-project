@@ -1,0 +1,31 @@
+.button {
+  @include flex-center;
+
+  padding: rem(16) rem(54);
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  border-radius: rem(54);
+  font-size: rem(16);
+  font-weight: 500;
+  border: rem(1) solid var(--color-dark);
+
+  @include mobile {
+    padding: rem(15) rem(54);
+  }
+
+  @include hover {
+    background-color: transparent;
+    color: var(--color-dark);
+  }
+
+  &--light {
+    background-color: transparent;
+    color: var(--color-dark);
+    border: var(--border-gray);
+
+    @include hover {
+      background-color: var(--color-dark);
+      color: var(--color-light);
+    }
+  }
+}

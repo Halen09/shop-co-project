@@ -1,8 +1,8 @@
 import BurgerButton from "@/components/BurgerButton/BurgerButton"
 import Logo from "@/components/Logo/Logo"
 import Form from "@/components/Form/Form"
-import HeaderOverlay from "@/components/Header/HeaderOverlay"
-import HeaderActions from "@/components/Header/HeaderActions"
+import HeaderOverlay from "@/layouts/Header/HeaderOverlay"
+import HeaderActions from "@/layouts/Header/HeaderActions"
 
 const HeaderBody = (props) => {
   const { navItems, actionItems } = props

@@ -13,7 +13,7 @@
   --color-red: #f33;
   --color-pink: rgba(255, 51, 51, 0.1);
 
-  --border-gray: rem(1) solid rgba(0, 0, 0, 0.1);
+  --border-gray: #{rem(1)} solid rgba(0, 0, 0, 0.1);
   --border-dark: rem(10) solid var(--color-dark);
 
   --font-family-base: "Satoshi", sans-serif;

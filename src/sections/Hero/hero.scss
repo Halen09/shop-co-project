@@ -1,0 +1,137 @@
+.hero {
+  &__body {
+    background-color: var(--color-light-1);
+
+    &-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      @include tablet {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    row-gap: fluid(32, 20);
+
+    &-link {
+      width: rem(210);
+
+      @include tablet {
+        width: 100%;
+      }
+    }
+  }
+
+  &__description {
+    font-weight: 400;
+    font-size: rem(16);
+    line-height: 143%;
+    color: var(--color-dark-3);
+
+    @include mobile {
+      font-size: rem(14);
+    }
+  }
+
+  &__main-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: fluid(48, 20);
+    padding-top: rem(103);
+    padding-bottom: rem(116);
+
+    @include tablet {
+      padding-top: rem(40);
+      padding-bottom: 0;
+    }
+  }
+
+  &__image {
+    position: relative;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &::before {
+      translate: 0 rem(300);
+      position: absolute;
+      content: "";
+      width: fluid(56, 44);
+      height: fluid(56, 44);
+
+      background-image: url("@/assets/images/hero/star_little.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+
+      @include mobile {
+        translate: 0 rem(137);
+      }
+    }
+
+    &::after {
+      top: 0;
+      right: 0;
+      translate: 0 rem(86);
+      position: absolute;
+      content: "";
+      width: fluid(104, 76);
+      height: fluid(104, 76);
+
+      background-image: url("@/assets/images/hero/star_big.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+
+      @include mobile {
+        translate: 0 rem(40);
+      }
+    }
+  }
+
+  &__companies {
+    background-color: var(--color-dark);
+
+    &-link {
+      display: contents;
+      width: 100%;
+
+      @include mobile {
+        width: calc(100% * 0.65);
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+
+    &-inner {
+      padding-block: rem(44);
+    }
+
+    &-list {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      row-gap: rem(22);
+
+      @include tablet {
+        justify-content: center;
+        column-gap: rem(34);
+      }
+    }
+
+    &-item {
+      @include mobile {
+        width: fit-content;
+      }
+    }
+  }
+}

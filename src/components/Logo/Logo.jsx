@@ -1,9 +1,8 @@
-
-import {Image} from "minista";
+import { Image } from "minista"
 import "./logo.scss"
 
 export default (props) => {
-  const { className} = props
+  const { className } = props
 
   return (
     <a
@@ -12,7 +11,7 @@ export default (props) => {
       aria-label={"Home"}
       href="/"
     >
-      <Image src={"/src/assets/images/logo.png"}/>
+      <Image src={"/src/assets/images/logo.png"} />
     </a>
   )
 }

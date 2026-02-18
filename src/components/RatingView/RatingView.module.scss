@@ -1,0 +1,40 @@
+.ratingView {
+  display: flex;
+  column-gap: rem(13);
+
+  @include mobile {
+    column-gap: rem(11);
+  }
+}
+
+.star {
+  @include square(rem(19));
+
+  background-image: url("@/assets/icons/star.svg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.halfOfStar {
+  width: rem(10);
+  height: rem(16);
+
+  background-image: url("@/assets/icons/star_half.svg");
+}
+
+.ratingViewStars {
+  display: flex;
+  align-items: center;
+  column-gap: rem(5);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  @include mobile {
+    column-gap: rem(4);
+  }
+}
+
+.rate {
+}

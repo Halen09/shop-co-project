@@ -1,16 +1,18 @@
 class BurgerButton {
   selectors = {
-    burgerButton: '[data-js-burger-button]',
-    overlay: '[data-js-overlay]'
+    burgerButton: "[data-js-burger-button]",
+    overlay: "[data-js-overlay]",
   }
 
   stateClasses = {
-    isActive: 'is-active',
-    isLock: 'is-lock'
+    isActive: "is-active",
+    isLock: "is-lock",
   }
 
   constructor() {
-    this.burgerButtonElement = document.querySelector(this.selectors.burgerButton)
+    this.burgerButtonElement = document.querySelector(
+      this.selectors.burgerButton,
+    )
     this.overlayElement = document.querySelector(this.selectors.overlay)
     this.bindEvents()
   }
@@ -22,7 +24,7 @@ class BurgerButton {
   }
 
   bindEvents() {
-    this.burgerButtonElement.addEventListener('click', this.onClick)
+    this.burgerButtonElement.addEventListener("click", this.onClick)
   }
 }
 

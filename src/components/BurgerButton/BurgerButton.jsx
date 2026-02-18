@@ -1,5 +1,5 @@
 export default (props) => {
-  const {className} = props
+  const { className } = props
 
   return (
     <button
